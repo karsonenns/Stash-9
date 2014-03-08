@@ -10,16 +10,16 @@ var mongoose = require('mongoose'),
  * Consumption Schema
  */
 var ConsumptionSchema = new Schema({
-    userID: {
-        type: ObjectID,
-        ref: 'User',
-        required: true
-    },
-    productID: {
-        type: ObjectID,
-        ref: 'Product',
-        required: true
-    },
+    // userID: {
+    //     type: Schema.ObjectID,
+    //     ref: 'User',
+    //     required: true
+    // },
+    // productID: {
+    //     type: Schema.ObjectID,
+    //     ref: 'Product',
+    //     required: true
+    // },
     dateAdded: {
         type: Date,
         default: Date.now,
@@ -31,13 +31,13 @@ var ConsumptionSchema = new Schema({
  * Validations
  */
 
-ConsumptionSchema.path('userID').validate(function(userID) {
-    return userID.length;
-}, 'User ID cannot be blank');
+// ConsumptionSchema.path('userID').validate(function(userID) {
+//     return userID.valueOf();
+// }, 'User ID cannot be blank');
 
-ConsumptionSchema.path('productID').validate(function(productID) {
-    return productID.length;
-}, 'Product ID cannot be blank');
+// ConsumptionSchema.path('productID').validate(function(productID) {
+//     return productID.valueOf();
+// }, 'Product ID cannot be blank');
 
 ConsumptionSchema.path('dateAdded').validate(function(dateAdded) {
     return (typeof dateAdded === 'Date' && dateAdded.length > 0);

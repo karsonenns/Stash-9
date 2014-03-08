@@ -10,11 +10,11 @@ var mongoose = require('mongoose'),
  * Inventory Schema
  */
 var InventorySchema = new Schema({
-    productID: {
-        type: ObjectID,
-        ref: 'Product'
-        required: true
-    },
+    // productID: {
+    //     type: Schema.ObjectID,
+    //     ref: 'Product',
+    //     required: true
+    // },
     count: {
         type: Number,
         required: true
@@ -36,9 +36,9 @@ var validatePresenceOf = function(value) {
     return value && value.length;
 };
 
-InventorySchema.path('productID').validate(function(productID) {
-    return productID.length;
-}, 'Product ID cannot be blank');
+// InventorySchema.path('productID').validate(function(productID) {
+//     return productID.valueOf();
+// }, 'Product ID cannot be blank');
 
 InventorySchema.path('count').validate(function(count) {
     return typeof count === 'number';
