@@ -1,0 +1,9 @@
+<div class="users list">
+	<article ng-repeat="customer in customers" ng-click="chooseCustomer(customer)">
+		<img src="{{customer.avatar}}">
+	</article>
+
+	<article ng-click="settings()">
+		<span>Settings</span>
+	</article>
+</div>
